@@ -2,7 +2,7 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/html" });
-    res.end("<h1>Hello! Node.js Application is running successfully.</h1>");
+    res.end("<h1>Hello! Node.js application is running successfully.</h1>");
 });
 
 server.listen(3000, () => {
