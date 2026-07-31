@@ -1,0 +1,9 @@
+{
+  "name": "jenkins-node-demo",
+  "version": "1.0.0",
+  "description": "Simple Node.js project for Jenkins",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
