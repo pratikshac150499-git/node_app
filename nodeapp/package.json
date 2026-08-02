@@ -1,9 +1,11 @@
 {
-  "name": "jenkins-node-demo",
+  "name": "nodeapp",
   "version": "1.0.0",
-  "description": "Simple Node.js project for Jenkins",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "mocha test/*.test.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.8.2",
+    "supertest": "^7.0.0"
   }
 }
