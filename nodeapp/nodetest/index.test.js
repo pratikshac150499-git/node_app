@@ -1,5 +1,13 @@
-const sum = require("../index");
+const request = require("supertest");
+const server = require("../index");
 
-test("adds 1 + 2 to equal 3", () => {
-    expect(sum(1, 2)).toBe(3);
+describe("Node.js Server Test", function () {
+
+    it("should return status 200", function (done) {
+        request(server)
+            .get("/")
+            .expect(200)
+            .end(done);
+    });
+
 });
