@@ -2,7 +2,7 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("HELLO INDIA!");
+    res.end("HELLO WORLD!");
 });
 
 module.exports = server;
