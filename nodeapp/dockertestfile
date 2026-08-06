@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Wait for the container to be running
+
+max_attempts=30
+current_attempt=0
+
+while [ $current_attempt -lt $max_attempts ]; do
+
+    container_status=$(sudo docker ps --format "{{.Names}}: {{.Status}}" | grep "nodecontainer")
+
+    if [ -n "$container_status" ]; then
+        echo "Container is running!"
+        break
+    else
+        echo "Waiting for container to be running..."
+        sleep 30
+        ((current_attempt++))
+    fi
+
+done
+
+if [ $current_attempt -eq $max_attempts ]; then
+    echo "Container failed to start after $max_attempts attempts."
+    exit 1
+fi
+
+echo "Deployment successful!"
