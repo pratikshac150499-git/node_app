@@ -7,7 +7,7 @@ current_attempt=0
 
 while [ $current_attempt -lt $max_attempts ]; do
 
-    container_status=$(sudo docker ps --format "{{.Names}}: {{.Status}}" | grep "nodecontainer")
+    container_status=$(docker ps --format "{{.Names}}: {{.Status}}" | grep "nodecontainer")
 
     if [ -n "$container_status" ]; then
         echo "Container is running!"
